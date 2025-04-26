@@ -39,7 +39,6 @@ const PinterestHome = () => {
 
       let newPhotos = response.data.photos;
 
-      // Apply sorting
       if (sortType === "oldest") {
         newPhotos.reverse();
       } else if (sortType === "random") {
@@ -86,7 +85,6 @@ const PinterestHome = () => {
     };
   }, [bottomRef, isLoading]);
 
-  // Handle scrolling to top visibility
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -124,7 +122,6 @@ const PinterestHome = () => {
     window.location.href = '/signin'
   };
 
-  // Scroll to the top of the page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -223,7 +220,6 @@ const PinterestHome = () => {
         ))}
       </div>
 
-      {/* Infinite Scroll Trigger */}
       <div ref={bottomRef} className="text-center py-6">
         {isLoading && <span className="text-gray-500">Loading more images...</span>}
       </div>
